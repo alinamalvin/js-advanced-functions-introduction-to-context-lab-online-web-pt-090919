@@ -13,7 +13,14 @@ function createEmployeeRecords(info){
   return info.map(createEmployeeRecord)
 }
 
-function createTimeInEvent(recod, date) {
-  return record.push(timeInEvents)
+
+function createTimeInEvent(record, date){
+  let timeInEvent = {
+    type: "TimeIn",
+    date: date.split(" ")[0],
+    hour: parseInt(date.split(" ")[1])
+  }
+  record.timeInEvents.push(timeInEvent)
+  return record
 }
 
