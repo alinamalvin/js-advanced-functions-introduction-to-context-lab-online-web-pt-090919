@@ -8,4 +8,4 @@ function createEmployeeRecord([firstName, familyName, title, payRate]) {
     "timeOutEvents": []
   }
 }
-}
+
