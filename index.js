@@ -34,9 +34,32 @@ function createTimeOutEvent(record, date){
   return record
 }
 
-function hoursWorkedOnDate(record, date) {
-  
-  return hours 
+function hoursWorkedOnDate(empRecord, date){
+  const timeIn = empRecord.timeInEvents.find(e => e.date === date)
+  const timeOut = empRecord.timeOutEvents.find(e => e.date === date)
+  const hoursWorked = (timeOut.hour - timeIn.hour) / 100
+  return hoursWorked
 }
 
+function wagesEarnedOnDate(empRecord, date){
+  let hoursWorked = hoursWorkedOnDate(empRecord, date)
+  let payOwed = hoursWorked * empRecord.payPerHour
+  return payOwed
+}
+
+function allWagesFor(empRecord){
+  const datesWorked = empRecord.timeInEvents.map(event => event.date)
+  const wagesOnDatesWorked = datesWorked.map(date => wagesEarnedOnDate(empRecord, date))
+  const totalWages = wagesOnDatesWorked.reduce(((total, earning) => total + earning), 0)
+    return totalWages
+}
+
+function findEmployeeByFirstName(employeeRecords, firstName) {
+    return employeeRecords.find(record => record.firstName === firstName)
+}
+
+function calculatePayroll(employeeRecords) {
+    const totalPay = employeeRecords.reduce(((total, record) => total + allWagesFor(record)), 0)
+    return totalPay
+} 
 
