@@ -9,7 +9,10 @@ function createEmployeeRecord([firstName, familyName, title, payRate]) {
   }
 }
 
-function createEmployeeRecords([arrays]) {
+function createEmployeeRecords(info]) {
   return [arrays]
-  
+}
+
+function createEmployeeRecords(info){
+  return info.map(createEmployeeRecord)
 }
