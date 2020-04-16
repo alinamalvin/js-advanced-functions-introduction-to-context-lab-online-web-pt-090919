@@ -1,5 +1,5 @@
 function createEmployeeRecord([firstName, familyName, title, payRate]) {
-  return 
+  return {
   "firstName": firstName, 
     "familyName": familyName,
     "title": title,
