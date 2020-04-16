@@ -13,4 +13,7 @@ function createEmployeeRecords(info){
   return info.map(createEmployeeRecord)
 }
 
-function createTimeInEvent(recod, )
+function createTimeInEvent(recod, date) {
+  return record.push(timeInEvents)
+}
+
