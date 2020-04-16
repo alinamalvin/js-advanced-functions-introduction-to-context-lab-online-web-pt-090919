@@ -24,3 +24,15 @@ function createTimeInEvent(record, date){
   return record
 }
 
+function createTimeOutEvent(record, date){
+  let timeOutEvent = {
+    type: "TimeOut",
+    date: date.split(" ")[0],
+    hour: parseInt(date.split(" ")[1])
+  }
+  record.timeOutEvents.push(timeOutEvent)
+  return record
+}
+
+function 
+
