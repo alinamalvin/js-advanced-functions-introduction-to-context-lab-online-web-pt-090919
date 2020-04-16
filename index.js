@@ -9,3 +9,7 @@ function createEmployeeRecord([firstName, familyName, title, payRate]) {
   }
 }
 
+function createEmployeeRecords([arrays]) {
+  return [arrays]
+  
+}
