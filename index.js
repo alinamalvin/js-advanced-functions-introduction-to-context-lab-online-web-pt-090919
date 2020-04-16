@@ -1,6 +1,6 @@
-function createEmployeeRecord([firstName, familyName, title, payRate]) {
+function createEmployeeRecord([firstName, familyName, title, payPerHour]){
   return {
-  "firstName": firstName, 
+    "firstName": firstName, 
     "familyName": familyName,
     "title": title,
     "payPerHour": payPerHour,
@@ -12,7 +12,6 @@ function createEmployeeRecord([firstName, familyName, title, payRate]) {
 function createEmployeeRecords(info){
   return info.map(createEmployeeRecord)
 }
-
 
 function createTimeInEvent(record, date){
   let timeInEvent = {
